@@ -1,0 +1,35 @@
+#N canvas 286 249 748 284 12;
+#X obj 26 123 osc~;
+#X obj 34 179 hip~ 5;
+#X obj 56 211 dac~;
+#X obj 32 90 +~;
+#X floatatom 325 23 5 0 800 0 - - - 0;
+#X obj 61 55 *~;
+#X obj 82 23 osc~;
+#X floatatom 325 51 5 0 800 0 - - - 0;
+#X floatatom 326 79 5 0 800 0 - - - 0;
+#X text 371 23 frq (carrier);
+#X text 370 52 frq (modulator);
+#X text 371 80 index (modulator);
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0_tab 2400 float 0;
+#X coords 0 1 2399 -1 400 100 1 0 0;
+#X restore 326 160 graph;
+#X obj 328 118 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 144 170 metro 250;
+#X obj 152 204 tabwrite~ \$0_tab;
+#X obj 292 33 cnv 1 1 200 empty empty empty 20 12 0 14 #e0e0e0 #404040
+0;
+#X connect 0 0 1 0;
+#X connect 0 0 15 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 1;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
